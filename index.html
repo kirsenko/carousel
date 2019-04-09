@@ -1,98 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>Document</title>
-</head>
-<body>
-	<ul id="slider">
-		<li>Slide 1</li>
-		<li>Slide 2</li>
-		<li>Slide 3</li>
-		<li>Slide 4</li>
-		<li>Slide 5</li>
-		<li>Slide 6</li>
-		<li>Slide 7</li>
-		<li>Slide 8</li>
-		<li>Slide 9</li>
-		<li>Slide 10</li>
-	</ul>
-	<button id="prev-btn">Prev</button>
-	<button id="next-btn">Next</button>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ul id="slider">
+      <li>Slide 1</li>
+      <li>Slide 2</li>
+      <li>Slide 3</li>
+      <li>Slide 4</li>
+      <li>Slide 5</li>
+      <li>Slide 6</li>
+      <li>Slide 7</li>
+      <li>Slide 8</li>
+      <li>Slide 9</li>
+      <li>Slide 10</li>
+    </ul>
+    <button id="prev-btn">Prev</button>
+    <button id="next-btn">Next</button>
 
-	<style>
-		*{
-			box-sizing: border-box;
-		}
-		#slider{
-			height: 500px;
-			background-color: #e3e3e3;
-			position: relative;
-			margin: 0;
-			padding: 0;
-			max-width: 100%;
-			width: 800px;
-		}
-		#slider li{
-			position: absolute;
-			left: 0;
-			top: 0;
-			width: 100%;
-			height: 100%;
-			padding: 50px;
-			font-size: 60px;
-			display: none;
-		}
-		#slider li.visible{
-			display: block;
-		}
-		#slider li:nth-child(1){
-			background-color: green;
-		}
-		#slider li:nth-child(2){
-			background-color: blue;
-		}
-		#slider li:nth-child(3){
-			background-color: lightblue;
-		}
-		#slider li:nth-child(4){
-			background-color: yellow;
-		}
-		#slider li:nth-child(5){
-			background-color: red;
-		}
-	</style>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      #slider {
+        height: 500px;
+        background-color: #e3e3e3;
+        position: relative;
+        margin: 0;
+        padding: 0;
+        max-width: 100%;
+        width: 800px;
+      }
+      #slider li {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        padding: 50px;
+        font-size: 60px;
+        display: none;
+      }
+      #slider li.visible {
+        display: block;
+      }
+      #slider li:nth-child(1) {
+        background-color: green;
+      }
+      #slider li:nth-child(2) {
+        background-color: blue;
+      }
+      #slider li:nth-child(3) {
+        background-color: lightblue;
+      }
+      #slider li:nth-child(4) {
+        background-color: yellow;
+      }
+      #slider li:nth-child(5) {
+        background-color: red;
+      }
+      #slider li:nth-child(6) {
+        background-color: rgb(0, 255, 136);
+      }
+      #slider li:nth-child(7) {
+        background-color: rgb(174, 0, 255);
+      }
+      #slider li:nth-child(8) {
+        background-color: rgb(255, 153, 0);
+      }
+      #slider li:nth-child(9) {
+        background-color: rgb(146, 106, 106);
+      }
+      #slider li:nth-child(10) {
+        background-color: rgb(131, 168, 199);
+      }
+    </style>
 
-	<script>
-		var slid = document.querySelectorAll('#slider li');
-		var currentSlide = 0;
-		slid[currentSlide].className = 'slide visible';
-		// var carouselInterval = setInterval(nextCarousel,2000);
-		function nextCarousel(){
-			slid[currentSlide].className = 'slide';
-			currentSlide = (currentSlide+1)%slid.length;
-			slid[currentSlide].className = 'slide visible';
-		}
+    <script>
+      var slid = document.querySelectorAll("#slider li");
+      var currentSlide = 0;
+      slid[currentSlide].className = "slide visible";
+      // var carouselInterval = setInterval(nextCarousel,2000);
+      function nextCarousel() {
+        slid[currentSlide].className = "slide";
+        currentSlide = (currentSlide + 1) % slid.length;
+        slid[currentSlide].className = "slide visible";
+      }
 
-		var btn_next = document.getElementById('next-btn');
-		btn_next.onclick = function(){
-			slid[currentSlide].className = 'slide';
-			currentSlide = (currentSlide+1)%slid.length;
-			slid[currentSlide].className = 'slide visible';
-		}
+      var btn_next = document.getElementById("next-btn");
+      btn_next.onclick = function() {
+        slid[currentSlide].className = "slide";
+        currentSlide = (currentSlide + 1) % slid.length;
+        slid[currentSlide].className = "slide visible";
+      };
 
-		var btn_prev = document.getElementById('prev-btn');
-		btn_prev.onclick = function(){
-			slid[currentSlide].className = 'slide';
-		//тут будет решение
-		if (!currentSlide) {
-			currentSlide = slid.length;
-		}
-		currentSlide = (currentSlide - 1) % slid.length;
-		slid[currentSlide].className = 'slide visible';
-	}
-</script>
-
-
-</body>
+      var btn_prev = document.getElementById("prev-btn");
+      btn_prev.onclick = function() {
+        slid[currentSlide].className = "slide";
+        //тут будет решение
+        if (!currentSlide) {
+          currentSlide = slid.length;
+        }
+        currentSlide = (currentSlide - 1) % slid.length;
+        slid[currentSlide].className = "slide visible";
+      };
+    </script>
+  </body>
 </html>

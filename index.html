@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
     <meta charset="UTF-8" />
     <title>Document</title>
@@ -82,7 +82,7 @@
       var slid = document.querySelectorAll("#slider li");
       var currentSlide = 0;
       slid[currentSlide].className = "slide visible";
-      // var carouselInterval = setInterval(nextCarousel,2000);
+      var carouselInterval = setInterval(nextCarousel,2000);
       function nextCarousel() {
         slid[currentSlide].className = "slide";
         currentSlide = (currentSlide + 1) % slid.length;
